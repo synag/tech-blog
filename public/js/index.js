@@ -5,15 +5,9 @@ const loginAnchorHandler = async(event) => {
 
 };
 
-const signupAnchorHandler = async(event) => {
-    event.preventDefault();
-        document.location.replace('/signup');
-}
+
 
 document
     .querySelector('.anchorLogin')
     .addEventListener('click', loginAnchorHandler);
 
-document
-    .querySelector('.anchorSignup')
-    .addEventListener('click', signupAnchorHandler);

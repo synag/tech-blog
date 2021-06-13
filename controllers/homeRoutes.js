@@ -58,7 +58,7 @@ router.get('/blogs', withAuth, async(req, res) => {
 
         // Pass serialized data into stockcarddetails template
         //update handlebars*****
-        res.render('xxx_add', {
+        res.render('dashboard', {
             users,
             logged_in: req.session.logged_in
         });

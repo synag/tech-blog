@@ -22,31 +22,37 @@ const loginFormHandler = async(event) => {
 
 };
 
-const signupFormHandler = async(event) => {
+// const signupFormHandler = async(event) => {
+//     event.preventDefault();
+
+//     const name = document.querySelector('#username-signup').value.trim();
+//     const email = document.querySelector('#email-signup').value.trim();
+//     const password = document.querySelector('#password-signup').value.trim();
+
+
+//     const response = await fetch('/api/users/create', {
+//         method: 'POST',
+//         body: JSON.stringify({ name, email, password }),
+//         headers: { 'Content-Type': 'application/json' },
+//     });
+
+//     if (response.ok) {
+//         document.location.replace('/blogs');
+//     } else {
+//         alert(response.statusText);
+//     }
+// };
+const signupAnchorHandler = async(event) => {
     event.preventDefault();
-
-    const name = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-
-
-    const response = await fetch('/api/users/create', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-        document.location.replace('/blogs');
-    } else {
-        alert(response.statusText);
-    }
-};
+        document.location.replace('/signup');
+}
 
 document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
+    document
+    .querySelector('.anchorSignup')
+    .addEventListener('click', signupAnchorHandler);
 
-document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+   
+
