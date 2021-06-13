@@ -12,20 +12,18 @@ BlogPost.init({
         primaryKey: true,
         autoIncrement: true
     },
-    stock: {
+    title: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    position: {
-        type: DataTypes.DECIMAL,
+    description: {
+        type: DataTypes.STRING,
         allowNull: false,
     },
-    shares: {
+  
+    date: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    },
-    currentPrice: {
-        type: DataTypes.INTEGER,
     },
     user_id: {
         type: DataTypes.INTEGER,
