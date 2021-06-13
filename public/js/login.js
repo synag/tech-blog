@@ -1,3 +1,6 @@
+
+
+
 const loginFormHandler = async(event) => {
     event.preventDefault();
 
@@ -12,7 +15,7 @@ const loginFormHandler = async(event) => {
     })
     console.log(response)
     if (response.ok) {
-        document.location.replace('/watchlist');
+        document.location.replace('/blogs');
     } else {
         alert(response.statusText);
     }
@@ -34,7 +37,7 @@ const signupFormHandler = async(event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/watchlist');
+        document.location.replace('/blogs');
     } else {
         alert(response.statusText);
     }

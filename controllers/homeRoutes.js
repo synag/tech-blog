@@ -6,12 +6,13 @@ const withAuth = require('../utils/auth');
 router.get('/', async(req, res) => {
 
     try {
-        // const userData = await BlogPost.findAll({})
 
-//review the handlebars ****
-        res.render('login', {
-            logged_in: req.session.logged_in
-            // userData
+         const userData = await BlogPost.findAll({}) //Update this to map results and show on homepage
+
+
+        res.render('homepage', {
+            logged_in: req.session.logged_in,
+            userData
         });
 
     } catch (err) {
@@ -19,6 +20,28 @@ router.get('/', async(req, res) => {
     }
 
 });
+
+///FIX 
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    // if (req.session.loggedIn) {
+    //   res.redirect('/');
+    //   return;
+    // }
+    // Otherwise, render the 'login' template
+    res.render('login');
+  });
+
+  router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+    // Otherwise, render the 'login' template
+    res.render('signup');
+  });
+
 
 router.get('/blogs', withAuth, async(req, res) => {
     try {
@@ -35,7 +58,7 @@ router.get('/blogs', withAuth, async(req, res) => {
 
         // Pass serialized data into stockcarddetails template
         //update handlebars*****
-        res.render('stockcarddetails', {
+        res.render('xxx_add', {
             users,
             logged_in: req.session.logged_in
         });
