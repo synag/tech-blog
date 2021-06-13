@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { blogPostRoute} = require('../models');
+const { BlogPost} = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -20,7 +20,7 @@ router.get('/', async(req, res) => {
 router.get('/blogData', withAuth, async(req, res) => {
     try {
         // Get all stocks based on logged in user
-        const userData = await Portfolio.findAll({
+        const userData = await BlogPost.findAll({
             where: {
                 user_id: req.session.user_id,
             }

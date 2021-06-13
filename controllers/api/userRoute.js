@@ -2,7 +2,7 @@ const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const { User, BlogPost } = require("../../models");
 
-// CREATE a new user
+// CREATE a new user//WORKS
 router.post("/create", async(req, res) => {
     try {
         const newUser = req.body;
