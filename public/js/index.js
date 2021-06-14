@@ -11,6 +11,12 @@ const homepageAnchorHandler = async(event) => {
 
 };
 
+const dashboardAnchorHandler = async(event) => {
+    event.preventDefault();
+    document.location.replace('/blogs');
+
+};
+
 document
     .querySelector('.anchorHomepage')
     .addEventListener('click', homepageAnchorHandler);
@@ -19,4 +25,8 @@ document
 document
     .querySelector('.anchorLogin')
     .addEventListener('click', loginAnchorHandler);
+
+    document
+    .querySelector('.anchorDashboard')
+    .addEventListener('click', dashboardAnchorHandler);
 

@@ -32,7 +32,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
-  router.get('/homepage', (req, res) => {
+  router.get('/homepage', withAuth, (req, res) => {
     // If the user is already logged in, redirect to the homepage
     // if (req.session.loggedIn) {
     //   res.redirect('/');
@@ -43,7 +43,7 @@ router.get('/login', (req, res) => {
   });
 
 
-  router.get('/post', (req, res) => {
+  router.get('/post', withAuth, (req, res) => {
     // If the user is already logged in, redirect to the homepage
     // if (req.session.loggedIn) {
     //   res.redirect('/');
