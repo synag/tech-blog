@@ -16,13 +16,13 @@ BlogPost.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    description: {
+    content: {
         type: DataTypes.STRING,
         allowNull: false,
     },
   
     date: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     user_id: {

@@ -3,21 +3,36 @@ const sequelize = require('../../config/connection');
 const { BlogPost } = require('../../models');
 const fetch = require("node-fetch");
 
-//Create new blog into the blogPost table
-router.post('/create', async(req, res) => {
+
+router.post('/create', async (req, res) => {
     try {
-        const newEntry = req.body;
-        newEntry.user_id = req.session.user_id
-            .then(function(response) {
-                return response.json();
-            });
-        const entryData = await BlogPost.create(newEntry);
-        res.status(200).json(entryData);
+      const newProject = await BlogPost.create({
+        ...req.body,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newProject);
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+      res.status(400).json(err);
     }
-});
+  })
+
+
+//Create new blog into the blogPost table
+// router.post('/create', async(req, res) => {
+//     try {
+//         const newEntry = req.body;
+//         newEntry.user_id = req.session.user_id
+//             .then(function(response) {
+//                 return response.json();
+//             });
+//         const entryData = await BlogPost.create(newEntry);
+//         res.status(200).json(entryData);
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
 
 // //Get an entry or entries based on account
 // router.get('/get', async(req, res) => {
