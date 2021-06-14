@@ -5,6 +5,15 @@ const loginAnchorHandler = async(event) => {
 
 };
 
+const homepageAnchorHandler = async(event) => {
+    event.preventDefault();
+    document.location.replace('/homepage');
+
+};
+
+document
+    .querySelector('.anchorHomepage')
+    .addEventListener('click', homepageAnchorHandler);
 
 
 document

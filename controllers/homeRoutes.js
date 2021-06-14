@@ -32,6 +32,27 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+  router.get('/homepage', (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    // if (req.session.loggedIn) {
+    //   res.redirect('/');
+    //   return;
+    // }
+    // Otherwise, render the 'login' template
+    res.render('homepageLink');
+  });
+
+
+  router.get('/post', (req, res) => {
+    // If the user is already logged in, redirect to the homepage
+    // if (req.session.loggedIn) {
+    //   res.redirect('/');
+    //   return;
+    // }
+    // Otherwise, render the 'login' template
+    res.render('crudPost');
+  });
+
   router.get('/signup', (req, res) => {
     // If the user is already logged in, redirect to the homepage
     if (req.session.loggedIn) {
@@ -41,6 +62,7 @@ router.get('/login', (req, res) => {
     // Otherwise, render the 'login' template
     res.render('signup');
   });
+
 
 
 router.get('/blogs', withAuth, async(req, res) => {
