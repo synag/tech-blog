@@ -16,6 +16,11 @@ const dashboardAnchorHandler = async(event) => {
     document.location.replace('/blogs');
 
 };
+const createBtnHandler = async(event) => {
+    event.preventDefault();
+    document.location.replace('/post');
+
+};
 
 document
     .querySelector('.anchorHomepage')
@@ -29,4 +34,8 @@ document
     document
     .querySelector('.anchorDashboard')
     .addEventListener('click', dashboardAnchorHandler);
+
+    document
+    .querySelector('.createBtn')
+    .addEventListener('click', createBtnHandler);
 

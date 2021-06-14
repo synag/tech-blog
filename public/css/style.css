@@ -1,0 +1,27 @@
+ .post{
+    border: solid cadetblue;
+    margin-top: 3em;
+
+ }
+
+ 
+ .updateButton,.deleteButton {
+    border: solid;
+    text-align: center;
+    background-color: burlywood;
+    color: whitesmoke;
+
+ }
+
+ .createButton {
+     margin-top:26em;
+     text-align:center;
+
+
+ }
+
+ #formHomePageContainer{
+     margin-top:4em
+ }
+
+ 

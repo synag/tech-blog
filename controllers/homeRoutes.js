@@ -11,7 +11,6 @@ router.get('/', async(req, res) => {
 
 
         res.render('homepage', {
-            logged_in: req.session.logged_in,
             userData
         });
 
@@ -50,7 +49,7 @@ router.get('/login', (req, res) => {
     //   return;
     // }
     // Otherwise, render the 'login' template
-    res.render('crudPost');
+    res.render('newPost');
   });
 
   router.get('/signup', (req, res) => {
