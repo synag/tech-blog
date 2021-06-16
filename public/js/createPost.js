@@ -5,7 +5,7 @@ const createPostHandler = async (event) => {
     const content = document.querySelector('#post-content').value.trim();
     // const user_id = document.querySelector('#portfolio-user_id').value.trim();
   
-    if (name && position && shares, user_id) {
+    if (title && content) {
       const response = await fetch(`/api/blog/create`, {
         method: 'POST',
         body: JSON.stringify({ title, content }),

@@ -56,13 +56,13 @@ router.post('/login', async(req, res) => {
     }
 });
 
-// GET a user
+// GET a user //Not sure we need this
 router.get("/get", async(req, res) => {
     try {
         const userData = await User.findOne({
             where: { email: req.body.email },
             include: {
-                model: Portfolio,
+                model: BlogPost,
             },
             exclude: {
                 password,

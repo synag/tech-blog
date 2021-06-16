@@ -21,10 +21,12 @@ BlogPost.init({
         allowNull: false,
     },
   
-    date: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    createdDate: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: true,
     },
+
     user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
