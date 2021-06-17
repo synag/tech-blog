@@ -41,39 +41,37 @@ router.get('/get', async(req, res) => {
         res.status(500).json(err);
     }
 })
-// //Update 
-router.put('/:id', async (req, res) => {
-    // update a category by its `id` value
-    try{
-      const blogData = await BlogPost.update(
-        
-        req.body,
-        
-        {
-          where: {
-            id: req.params.id,
-          },
-        });
-  
+// //Update route works
+router.put("/:id", async (req, res) => {
+  // update a category by its `id` value
+  try {
+    const blogData = await BlogPost.update(
+      req.body,
+
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+
     res.status(200).json(blogData);
-    } catch (err) {
-      res.status(500).json(err);
-    
-    }
-  });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
   
 
 //Delete an entry ---THINK THROUGH DELETE --NOT SURE THIS CODE WILL CUT IT
-router.delete('/delete', async(req, res) => {
+router.delete('/:id', async(req, res) => {
     try {
         const selectedRow = await BlogPost.destroy({
             where: {
-                user_id: req.session.user_id,
-                title: req.body.title
+                id: req.params.id,
             }
         });
         if (!selectedRow) {
-            res.status(404).json({ message: 'None of that stock is owned by this account.' });
+            res.status(404).json({ message: 'None of that blog post  owned by this account.' });
             return;
         }
         res.status(200).json(selectedRow);
