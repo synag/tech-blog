@@ -71,19 +71,24 @@ router.get("/blogs", withAuth, async (req, res) => {
     });
 
     console.log(userData);
-    // Serialize stock data so templates can read it
+    // Serialize blogs data so templates can read it
     const users = userData.map((blogPost) => {
      return blogPost.get({ plain: true });
     });
     console.log(users);
-    // Pass serialized data into stockcarddetails template
-    //update handlebars*****
+    
     res.render("dashboard", {
       users,
     });
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+
+router.get("/update", withAuth, async (req, res) => {
+  
+res.render("crudPost");
 });
 
 module.exports = router;

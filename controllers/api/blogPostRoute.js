@@ -9,8 +9,6 @@ router.post('/create', async (req, res) => {
       const newProject = await BlogPost.create({
         ...req.body,
         user_id: req.session.user_id,
-    
-        
 
       });
   
@@ -20,22 +18,6 @@ router.post('/create', async (req, res) => {
     }
   })
 
-
-//Create new blog into the blogPost table
-// router.post('/create', async(req, res) => {
-//     try {
-//         const newEntry = req.body;
-//         newEntry.user_id = req.session.user_id
-//             .then(function(response) {
-//                 return response.json();
-//             });
-//         const entryData = await BlogPost.create(newEntry);
-//         res.status(200).json(entryData);
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
 
 //Get an blog post based on user 
 router.get('/get', async(req, res) => {
@@ -60,6 +42,26 @@ router.get('/get', async(req, res) => {
     }
 })
 // //Update 
+router.put('/:id', async (req, res) => {
+    // update a category by its `id` value
+    try{
+      const blogData = await BlogPost.update(
+        
+        req.body,
+        
+        {
+          where: {
+            id: req.params.id,
+          },
+        });
+  
+    res.status(200).json(blogData);
+    } catch (err) {
+      res.status(500).json(err);
+    
+    }
+  });
+  
 
 //Delete an entry ---THINK THROUGH DELETE --NOT SURE THIS CODE WILL CUT IT
 router.delete('/delete', async(req, res) => {
