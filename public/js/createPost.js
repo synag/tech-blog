@@ -15,7 +15,7 @@ const createPostHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard');
+        document.location.replace('/blogs');
       } else {
         alert('Failed to add post');
       }
