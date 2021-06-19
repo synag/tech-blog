@@ -22,6 +22,12 @@ const createBtnHandler = async(event) => {
 
 };
 
+const updateAnchorPostHandler = async(event) => {
+    event.preventDefault();
+    document.location.replace(`/update/2`);
+
+};
+
 document
     .querySelector('.anchorHomepage')
     .addEventListener('click', homepageAnchorHandler);
@@ -39,3 +45,6 @@ document
     .querySelector('.createBtn')
     .addEventListener('click', createBtnHandler);
 
+    document
+    .querySelector('.updatePost')
+    .addEventListener('click', updateAnchorPostHandler);

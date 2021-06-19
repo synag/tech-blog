@@ -1,12 +1,12 @@
-const createPostHandler = async (event) => {
+const updatePostHandler = async (event) => {
     event.preventDefault();
   
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
-    // const user_id = document.querySelector('#portfolio-user_id').value.trim();
+         id = document.querySelector('#id').value.trim();
   
     if (title && content) {
-      const response = await fetch(`/api/blog/create`, {
+      const response = await fetch(`/api/blog/update/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -15,7 +15,7 @@ const createPostHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/blogs');
+        document.location.replace('/blog');
       } else {
         alert('Failed to update post');
       }

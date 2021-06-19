@@ -70,12 +70,12 @@ router.get("/blogs", withAuth, async (req, res) => {
       },
     });
 
-    console.log(userData);
+   
     // Serialize blogs data so templates can read it
     const users = userData.map((blogPost) => {
      return blogPost.get({ plain: true });
     });
-    console.log(users);
+   
     
     res.render("dashboard", {
       users,
@@ -87,8 +87,33 @@ router.get("/blogs", withAuth, async (req, res) => {
 
 
 router.get("/update", withAuth, async (req, res) => {
-  
-res.render("crudPost");
+  try {
+    // Get all blogs based on logged in user
+    const userData = await BlogPost.findAll({
+      where: {
+        id: 3,
+      },
+    });
+
+   console.log(userData)
+    // Serialize blogs data so templates can read it
+    const users = userData.map((blogPost) => {
+     return blogPost.get({ plain: true });
+    });
+   
+    console.log(users)
+    res.render("crudPost", {
+      users,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
+
+
+
+
+  
+
 
 module.exports = router;

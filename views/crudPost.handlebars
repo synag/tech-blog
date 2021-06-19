@@ -1,12 +1,21 @@
+
+{{#each users}}
 <div class="container post">
-<div class="mb-3">
-  <label for="formGroupExampleInput" class="form-label">Title</label>
-  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-</div>
-<div class="mb-3">
-  <label for="formGroupExampleInput2" class="form-label">Content</label>
-  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-</div>
-  <a><h3 class="updateButton">UPDATE</h3></a>
-  <a><h3 class ="deleteButton">DELETE</h3></a>
-<div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Title</label>
+    <textarea type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+    {{title}}</textarea>
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Content</label>
+    <textarea type="text" class="form-control" id="formGroupExampleInput2"
+      placeholder="Another input placeholder">{{content}}</textarea>
+  </div>
+  <a>
+    <h3 class="updateButton">UPDATE</h3>
+  </a>
+  <a>
+    <h3 class="deleteButton">DELETE</h3>
+  </a>
+  <div>
+    {{/each}}
