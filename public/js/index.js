@@ -24,7 +24,8 @@ const createBtnHandler = async(event) => {
 
 const updateAnchorPostHandler = async(event) => {
     event.preventDefault();
-    document.location.replace(`/update/2`);
+    const id=event.target.parentElement.id
+    document.location.replace(`/update/${id}`);
 
 };
 
@@ -45,6 +46,14 @@ document
     .querySelector('.createBtn')
     .addEventListener('click', createBtnHandler);
 
-    document
-    .querySelector('.updatePost')
-    .addEventListener('click', updateAnchorPostHandler);
+    const updateBlogsAnchorButton = document.getElementsByClassName('updatePost');
+
+    // document
+    // .querySelector('.updatePost')
+    // .addEventListener('click', updateAnchorPostHandler);
+
+  for (const button of updateBlogsAnchorButton) {
+    button.addEventListener('click', updateAnchorPostHandler);
+    // const stock = button[0].parentElement.parentElement.firstElementChild.innerText
+  }
+  

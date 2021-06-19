@@ -86,24 +86,23 @@ router.get("/blogs", withAuth, async (req, res) => {
 });
 
 
-router.get("/update", withAuth, async (req, res) => {
+router.get("/update/:id", withAuth, async (req, res) => {
   try {
     // Get all blogs based on logged in user
-    const userData = await BlogPost.findAll({
+    const blogData = await BlogPost.findAll({
       where: {
-        id: 3,
+        id: req.params.id
       },
     });
 
-   console.log(userData)
     // Serialize blogs data so templates can read it
-    const users = userData.map((blogPost) => {
+    const singleBlogPost = blogData.map((blogPost) => {
      return blogPost.get({ plain: true });
     });
    
-    console.log(users)
+   
     res.render("crudPost", {
-      users,
+      singleBlogPost,
     });
   } catch (err) {
     res.status(500).json(err);
