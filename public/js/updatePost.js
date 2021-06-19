@@ -3,10 +3,10 @@ const updatePostHandler = async (event) => {
   
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
-         id = document.querySelector('#id')[0]
+         id = document.querySelectorAll('div[id]')[1].id
   
     if (title || content) {
-      const response = await fetch(`/ap/blog/update/${id}`, {
+      const response = await fetch(`/api/blog/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -15,7 +15,7 @@ const updatePostHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/blog');
+        document.location.replace('/blogs');
       } else {
         alert('Failed to update post');
       }
