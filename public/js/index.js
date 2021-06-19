@@ -1,59 +1,46 @@
-
-const loginAnchorHandler = async(event) => {
-    event.preventDefault();
-    document.location.replace('/login');
-
+const loginAnchorHandler = async (event) => {
+  event.preventDefault();
+  document.location.replace("/login");
 };
 
-const homepageAnchorHandler = async(event) => {
-    event.preventDefault();
-    document.location.replace('/homepage');
-
+const homepageAnchorHandler = async (event) => {
+  event.preventDefault();
+  document.location.replace("/homepage");
 };
 
-const dashboardAnchorHandler = async(event) => {
-    event.preventDefault();
-    document.location.replace('/blogs');
-
+const dashboardAnchorHandler = async (event) => {
+  event.preventDefault();
+  document.location.replace("/blogs");
 };
-const createBtnHandler = async(event) => {
-    event.preventDefault();
-    document.location.replace('/post');
-
+const createBtnHandler = async (event) => {
+  event.preventDefault();
+  document.location.replace("/post");
 };
 
-const updateAnchorPostHandler = async(event) => {
-    event.preventDefault();
-    const id=event.target.parentElement.id
-    document.location.replace(`/update/${id}`);
-
+const updateAnchorPostHandler = async (event) => {
+  event.preventDefault();
+  const id = event.target.parentElement.id;
+  document.location.replace(`/update?id=${id}`)
 };
 
 document
-    .querySelector('.anchorHomepage')
-    .addEventListener('click', homepageAnchorHandler);
-
+  .querySelector(".anchorHomepage")
+  .addEventListener("click", homepageAnchorHandler);
 
 document
-    .querySelector('.anchorLogin')
-    .addEventListener('click', loginAnchorHandler);
+  .querySelector(".anchorLogin")
+  .addEventListener("click", loginAnchorHandler);
 
-    document
-    .querySelector('.anchorDashboard')
-    .addEventListener('click', dashboardAnchorHandler);
+document
+  .querySelector(".anchorDashboard")
+  .addEventListener("click", dashboardAnchorHandler);
 
-    document
-    .querySelector('.createBtn')
-    .addEventListener('click', createBtnHandler);
+document
+  .querySelector(".createBtn")
+  .addEventListener("click", createBtnHandler);
 
-    const updateBlogsAnchorButton = document.getElementsByClassName('updatePost');
+const updateBlogsAnchorButton = document.getElementsByClassName("updatePost");
 
-    // document
-    // .querySelector('.updatePost')
-    // .addEventListener('click', updateAnchorPostHandler);
-
-  for (const button of updateBlogsAnchorButton) {
-    button.addEventListener('click', updateAnchorPostHandler);
-    // const stock = button[0].parentElement.parentElement.firstElementChild.innerText
-  }
-  
+for (const button of updateBlogsAnchorButton) {
+  button.addEventListener("click", updateAnchorPostHandler);
+}

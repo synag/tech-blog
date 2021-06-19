@@ -86,12 +86,12 @@ router.get("/blogs", withAuth, async (req, res) => {
 });
 
 
-router.get("/update/:id", withAuth, async (req, res) => {
+router.get("/update", withAuth, async (req, res) => {
   try {
     // Get all blogs based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: req.params.id
+        id: req.query.id
       },
     });
 
@@ -110,9 +110,6 @@ router.get("/update/:id", withAuth, async (req, res) => {
 });
 
 
-
-
-  
 
 
 module.exports = router;

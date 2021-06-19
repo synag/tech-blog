@@ -3,10 +3,10 @@ const updatePostHandler = async (event) => {
   
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
-         id = document.querySelector('#id').value.trim();
+         id = document.querySelector('#id')[0]
   
-    if (title && content) {
-      const response = await fetch(`/api/blog/update/${id}`, {
+    if (title || content) {
+      const response = await fetch(`/ap/blog/update/${id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -23,8 +23,6 @@ const updatePostHandler = async (event) => {
   };
   
   document
-  .querySelector('.postBtn')
-  .addEventListener('click', createPostHandler);
+  .querySelector('.updateBtn')
+  .addEventListener('click', updatePostHandler);
 
-
-  //UPDATE POST
