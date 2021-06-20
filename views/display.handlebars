@@ -1,14 +1,15 @@
 {{#each singleBlogPost}}
 <div class="card">
- <a id="{{id}}"><div class="card-header updatePost">
-   {{title}}
-  </div></a>
+  <a id="{{id}}">
+    <div class="card-header updatePost">
+      {{title}}
+    </div>
+  </a>
+  {{/each}}
   <div class="card-body">
     <label for="formGroupExampleInput2" class="form-label">Comment</label>
-    <p type="text" class="form-control" id="post-content"
-      placeholder="Another input placeholder"></p>
+    {{#each commentBlogPost}}
+    <p type="text" class="form-control" id="retrieve-comment" placeholder="Another input placeholder"> {{comment}}</p>
   </div>
 </div>
- {{/each}}
-{{!-- 
- displays blog plus comments  --}}
+{{/each}}

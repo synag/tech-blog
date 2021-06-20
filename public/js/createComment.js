@@ -14,7 +14,7 @@ const createCommentHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/homepage');
+        document.location.replace('/display');
       } else {
         alert('Failed to add post');
       }

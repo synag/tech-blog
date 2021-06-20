@@ -135,18 +135,24 @@ router.get("/commentpost", withAuth, async (req, res) => {
 
 router.get("/display", withAuth, async (req, res) => {
   try {
-    // Get all blogs based on logged in user
+    // Get all comments based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: req.query.id
+        id: 3
       },
+
+      
     });
+    // console.log(blogData)
 
     const commentData = await Comments.findAll({
       where: {
-        blog_id: req.query.id
+        blogPost_id: 3
       },
+
     });
+    console.log(commentData)
+
 
     // Serialize blogs data so templates can read it
     const singleBlogPost = blogData.map((blogPost) => {
@@ -159,7 +165,7 @@ router.get("/display", withAuth, async (req, res) => {
    
     res.render("display", {
       singleBlogPost,
-      ommentBlogPost
+      commentBlogPost
     });
   } catch (err) {
     res.status(500).json(err);
