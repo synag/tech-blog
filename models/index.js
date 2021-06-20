@@ -15,4 +15,4 @@ BlogPost.hasMany(Comments, {
     foreignKey: 'user_id',
 })
 
-module.exports = { User, BlogPost };
+module.exports = { User, BlogPost,Comments };

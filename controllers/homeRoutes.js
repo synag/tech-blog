@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BlogPost } = require("../models");
+const { BlogPost, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -109,6 +109,62 @@ router.get("/update", withAuth, async (req, res) => {
   }
 });
 
+router.get("/commentpost", withAuth, async (req, res) => {
+  try {
+    // Get all blogs based on logged in user
+    const blogData = await BlogPost.findAll({
+      where: {
+        id: 4
+      },
+    });
+
+
+    // Serialize blogs data so templates can read it
+    const singleBlogPost = blogData.map((blogPost) => {
+     return blogPost.get({ plain: true });
+    });
+   
+  
+    res.render("comment", {
+      singleBlogPost,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/display", withAuth, async (req, res) => {
+  try {
+    // Get all blogs based on logged in user
+    const blogData = await BlogPost.findAll({
+      where: {
+        id: req.query.id
+      },
+    });
+
+    const commentData = await Comments.findAll({
+      where: {
+        blog_id: req.query.id
+      },
+    });
+
+    // Serialize blogs data so templates can read it
+    const singleBlogPost = blogData.map((blogPost) => {
+     return blogPost.get({ plain: true });
+    });
+   
+    const commentBlogPost = commentData.map((commentPost) => {
+      return commentPost.get({ plain: true });
+     });
+   
+    res.render("display", {
+      singleBlogPost,
+      ommentBlogPost
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 

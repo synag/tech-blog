@@ -1,0 +1,19 @@
+{{#each singleBlogPost}}
+<div class="card">
+ <a id="{{id}}"><div class="card-header createComment">
+   {{title}}
+  </div></a>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Comment</label>
+    <textarea type="text" class="form-control" id="post-content"
+      placeholder="Another input placeholder"></textarea>
+  </div>
+  <a>
+    <h3 class="createCommentBtn">SUBMIT<h3>
+  </a>
+
+  </div>
+    {{/each}}
+    <script src="./js/updatePost.js"></script> 
+  
+{{!-- create js file --}}

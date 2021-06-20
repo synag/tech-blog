@@ -16,13 +16,11 @@ Comments.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    username: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    date: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+
+    createdDate: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+        allowNull: true,
     },
     blogPost_id: {
         type: DataTypes.INTEGER,
