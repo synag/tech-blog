@@ -138,7 +138,7 @@ router.get("/display", withAuth, async (req, res) => {
     // Get all comments based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: 3
+        id: req.query.id
       },
 
       
@@ -147,7 +147,7 @@ router.get("/display", withAuth, async (req, res) => {
 
     const commentData = await Comments.findAll({
       where: {
-        blogPost_id: 3
+        blogPost_id: req.query.id
       },
 
     });

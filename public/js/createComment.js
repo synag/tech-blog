@@ -14,7 +14,7 @@ const createCommentHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/display');
+        document.location.replace(`/display?id=${blogPost_id}`);
       } else {
         alert('Failed to add post');
       }
