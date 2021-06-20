@@ -114,7 +114,7 @@ router.get("/commentpost", withAuth, async (req, res) => {
     // Get all blogs based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: 4
+        id: req.query.id
       },
     });
 
