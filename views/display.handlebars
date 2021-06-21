@@ -2,14 +2,16 @@
 <div class="card">
   <a id="{{id}}">
     <div class="card-header updatePost">
-      {{title}}
+      <span>Title: </span> {{title}}
     </div>
   </a>
   {{/each}}
   <div class="card-body">
-    <label for="formGroupExampleInput2" class="form-label">Comment</label>
+    <label for="formGroupExampleInput2" class="form-label">Comment:</label>
     {{#each commentBlogPost}}
-    <p type="text" class="form-control" id="retrieve-comment" placeholder="Another input placeholder"> {{comment}}</p>
+   <blockquote style="margin-bottom:2em"class="blockquote mb-0"> <p style="
+    margin-bottom: -3px;" type="text" class="form-control" id="retrieve-comment" placeholder="Another input placeholder"> {{comment}}</p></footer class="blockquote-footer"><div style="display:inline;font-size:12px;font-style:italic; ">Creation Date:</div> <cite title="Source Title" style="font-size:11px">{{createdDate}}</cite></footer>
+    </blockquote>
+    {{/each}}
   </div>
 </div>
-{{/each}}

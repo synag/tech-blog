@@ -5,7 +5,7 @@
  }
 
  
- .updateBtn,.deleteBtn .createCommentBtn {
+ .updateBtn,.deleteBtn, .createCommentBtn {
     border: solid;
     text-align: center;
     background-color: burlywood;
@@ -28,3 +28,18 @@
      cursor: grab;
 }
  
+.containerMarginTop{
+    margin-top: 1em;
+}
+
+.card-header{
+    Background-color: #dee2e6
+}
+
+span,label{
+    font-weight: bold;
+}
+
+.blockquote{
+    font-size: 17px
+}

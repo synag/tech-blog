@@ -1,10 +1,10 @@
 {{#each singleBlogPost}}
 <div class="card">
  <a id="{{id}}"><div class="card-header createComment">
-   {{title}}
+  <span>Title: </span> {{title}}
   </div></a>
   <div class="mb-3">
-    <label for="formGroupExampleInput2" class="form-label">Comment</label>
+    <label for="formGroupExampleInput2" class="form-label" style ="margin-left:1em">Comment:</label>
     <textarea type="text" class="form-control" id="post-comment"
       placeholder="Another input placeholder"></textarea>
   </div>
@@ -16,4 +16,3 @@
     {{/each}}
     <script src="./js/createComment.js"></script> 
   
-{{!-- create js file --}}
