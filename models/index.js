@@ -12,11 +12,6 @@ BlogPost.belongsTo(User, {
     
 })
 
-// Comments.belongsTo(BlogPost, {
-//     foreignKey: 'blogPost_id',
-   
-
-// })
 
 BlogPost.hasMany(Comments, {
  foreignKey: 'blogPost_id',
