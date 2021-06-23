@@ -4,15 +4,24 @@ const Comments = require('./comments');
 
 User.hasMany(BlogPost, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+
 })
 
 BlogPost.belongsTo(User, {
     foreignKey: 'user_id',
+    
+})
+
+Comments.belongsTo(BlogPost, {
+    foreignKey: 'BlogPost_id',
+   
+
 })
 
 BlogPost.hasMany(Comments, {
-    foreignKey: 'blogPost_id',
+ foreignKey: 'blogPost_id',
+  onDelete: 'CASCADE',
+    
 })
 
 module.exports = { User, BlogPost,Comments };

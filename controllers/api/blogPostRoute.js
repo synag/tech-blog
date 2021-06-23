@@ -62,7 +62,7 @@ router.put("/:id", async (req, res) => {
 });
   
 
-//Delete an entry ---THINK THROUGH DELETE --NOT SURE THIS CODE WILL CUT IT
+//Delete an entry ---
 router.delete('/:id', async(req, res) => {
     try {
         const selectedRow = await BlogPost.destroy({
