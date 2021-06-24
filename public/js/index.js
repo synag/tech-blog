@@ -27,12 +27,24 @@ const updateAnchorPostHandler = async (event) => {
 
 const commentAnchorPostHandler = async (event) => {
   event.preventDefault();
-  const id = event.target.parentElement.id;
+  const id = event.target.parentElement.parentElement.parentElement.children[0].id;
   document.location.replace(`/commentpost?id=${id}`)
 };
 
+const viewCommentAnchorPostHandler = async (event) => {
+  event.preventDefault();
+  const blogPost_id = event.target.parentElement.parentElement.parentElement.children[0].id;
+  document.location.replace(`/display?id=${blogPost_id}`);
+};
 
-const commentPostAnchorButton = document.getElementsByClassName("commentPost");
+
+const viewCommentPostAnchorButton = document.getElementsByClassName("viewComment");
+
+for (const button of viewCommentPostAnchorButton) {
+  button.addEventListener("click", viewCommentAnchorPostHandler);
+}
+
+const commentPostAnchorButton = document.getElementsByClassName("createComment");
 
 for (const button of commentPostAnchorButton) {
   button.addEventListener("click", commentAnchorPostHandler);
