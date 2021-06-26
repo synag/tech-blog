@@ -1,7 +1,7 @@
 const createCommentHandler = async (event) => {
   event.preventDefault();
 
-  const blogPost_id = document.querySelectorAll("a")[5].id;
+  const blogPost_id = document.querySelectorAll("a")[4].id;
   const comment = document.querySelector("#post-comment").value.trim();
 
   if (comment) {
