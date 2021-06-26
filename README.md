@@ -38,7 +38,7 @@ Limited usage instructions. You are required to sign up to get access to the sit
 
 The sreenshot for the Tech Blog is below. 
 
-![Tech Blog](images\screenshot.png))
+![Tech Blog](.\public\image\screenshot.png))
 
 ## License
 The license used for this project is MIT. Here is the license link https://opensource.org/licenses/MIT
