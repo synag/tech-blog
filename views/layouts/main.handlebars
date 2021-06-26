@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,46 +9,87 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
-    /> <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-   
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+
   </head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Tech Blog</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active anchorHomepage" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link  anchorDashboard" href="#">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link anchorLogin" href="#">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="logout" href="#">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+      <div class="container-fluid">
+        {{#if logged_in}}
+          <div class="navbar-brand text-warning">Tech Blog</div>
+        {{else}}
+          <div class="navbar-brand text-warning">Tech Blog Home</div>
+        {{/if}}
 
-<div class ="container containerMarginTop">
-{{{body}}}
-</div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link anchorHomepage"
+                type="button"
+                aria-current="page"
+                data-toggle="button"
+                aria-pressed="false"
+                autocomplete="off"
+              >Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link anchorDashboard"
+                data-toggle="button"
+                aria-pressed="false"
+                autocomplete="off"
+              >Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link anchorLogin"
+                data-toggle="button"
+                aria-pressed="false"
+                autocomplete="off"
+              >Login</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="logout"
+                data-toggle="button"
+                aria-pressed="false"
+                autocomplete="off"
+              >Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container containerMarginTop">
+      {{{body}}}
+    </div>
     <script src="./js/index.js"></script>
     <script src="./js/logout.js"></script>
-    
-   
-   
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

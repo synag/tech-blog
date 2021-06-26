@@ -1,23 +1,32 @@
 {{#each singleBlogPost}}
-<div class="container post" id="{{id}}">
-  <div class="mb-3">
-    <label for="formGroupExampleInput" class="form-label"><span>Title: </span></label>
-    <textarea type="text" class="form-control" id="post-title" placeholder="Example input placeholder">
-    {{title}}</textarea>
+  <div class="container post" id="{{id}}">
+    <div class="mb-3">
+      <label for="formGroupExampleInput" class="form-label"><span>Title:
+        </span></label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="post-title"
+        placeholder="Example input placeholder"
+      >
+        {{title}}</textarea>
+    </div>
+    <div class="mb-3">
+      <label for="formGroupExampleInput2" class="form-label">Content</label>
+      <textarea
+        type="text"
+        class="form-control"
+        id="post-content"
+        placeholder="Add Content"
+      >{{content}}</textarea>
+    </div>
+    <a>
+      <h3 class="updateBtn">UPDATE</h3>
+    </a>
+    <a>
+      <h3 class="deleteBtn">DELETE</h3>
+    </a>
   </div>
-  <div class="mb-3">
-    <label for="formGroupExampleInput2" class="form-label">Content</label>
-    <textarea type="text" class="form-control" id="post-content"
-      placeholder="Add Content">{{content}}</textarea>
-  </div>
-  <a>
-    <h3 class="updateBtn">UPDATE</h3>
-  </a>
-  <a>
-    <h3 class="deleteBtn">DELETE</h3>
-  </a>
-  </div>
-    {{/each}}
-    <script src="./js/updatePost.js"></script>
-     <script src="./js/deletePost.js"></script>
-   
+{{/each}}
+<script src="./js/updatePost.js"></script>
+<script src="./js/deletePost.js"></script>

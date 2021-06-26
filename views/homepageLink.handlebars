@@ -1,24 +1,22 @@
 {{#each blogs}}
-  <div class="card">
-    <div
-      id="{{id}}"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="click title to add comment"
-    ><div class="card-header commentPost">
-        <span>Title: </span>
-        {{title}}
-      </div></div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p><span>Content: </span>{{content}}</p>
-        <footer class="blockquote-footer">Creation Date:
-          <cite title="Source Title">{{createdDate}}</cite></footer>
-      </blockquote>
-      <a><i class="far fa-comment viewComment"   data-bs-toggle="tooltip"
-      data-bs-placement="top" title="click here to view comments" style="font-size:17px; color:goldenrod"></i></a>
-     <a> <i class="fas fa-user-plus createComment" data-bs-toggle="tooltip"
-      data-bs-placement="top" title="click here to add a comment"style="font-size:17px; color:goldenrod"></i></a>
+<div class="card">
+  <div id="{{id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="click title to add comment">
+    <div class="card-header commentPost">
+      <span>Title: </span>
+      {{title}}
     </div>
   </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><span>Content: </span>{{content}}</p>
+      <footer class="blockquote-footer">Creation Date:
+        <cite title="Source Title">{{createdDate}}</cite>
+      </footer>
+    </blockquote>
+    <a><i class="far fa-comment viewComment" data-bs-toggle="tooltip" data-bs-placement="top"
+        title="click here to view comments" style="font-size:17px; color:goldenrod"></i></a>
+    <a> <i class="fas fa-user-plus createComment" data-bs-toggle="tooltip" data-bs-placement="top"
+        title="click here to add a comment" style="font-size:17px; color:goldenrod"></i></a>
+  </div>
+</div>
 {{/each}}

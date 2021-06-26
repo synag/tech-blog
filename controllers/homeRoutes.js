@@ -4,12 +4,13 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const blogData = await BlogPost.findAll({}); 
+    const blogData = await BlogPost.findAll({});
     const blogs = blogData.map((blogPost) => {
       return blogPost.get({ plain: true });
-     });
+    });
     res.render("homepage", {
-      blogs
+      blogs,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -27,14 +28,14 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/homepage", withAuth, async(req, res) => {
+router.get("/homepage", withAuth, async (req, res) => {
   try {
-    const blogData = await BlogPost.findAll({}); 
+    const blogData = await BlogPost.findAll({});
     const blogs = blogData.map((blogPost) => {
       return blogPost.get({ plain: true });
-     });
+    });
     res.render("homepageLink", {
-      blogs
+      blogs,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -42,12 +43,6 @@ router.get("/homepage", withAuth, async(req, res) => {
 });
 
 router.get("/post", withAuth, (req, res) => {
-  // If the user is already logged in, redirect to the homepage
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
-  // Otherwise, render the 'login' template
   res.render("newPost");
 });
 
@@ -70,13 +65,11 @@ router.get("/blogs", withAuth, async (req, res) => {
       },
     });
 
-   
     // Serialize blogs data so templates can read it
     const users = userData.map((blogPost) => {
-     return blogPost.get({ plain: true });
+      return blogPost.get({ plain: true });
     });
-   
-    
+
     res.render("dashboard", {
       users,
     });
@@ -85,22 +78,20 @@ router.get("/blogs", withAuth, async (req, res) => {
   }
 });
 
-
 router.get("/update", withAuth, async (req, res) => {
   try {
     // Get all blogs based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: req.query.id
+        id: req.query.id,
       },
     });
 
     // Serialize blogs data so templates can read it
     const singleBlogPost = blogData.map((blogPost) => {
-     return blogPost.get({ plain: true });
+      return blogPost.get({ plain: true });
     });
-   
-   
+
     res.render("crudPost", {
       singleBlogPost,
     });
@@ -114,17 +105,15 @@ router.get("/commentpost", withAuth, async (req, res) => {
     // Get all blogs based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: req.query.id
+        id: req.query.id,
       },
     });
 
-
     // Serialize blogs data so templates can read it
     const singleBlogPost = blogData.map((blogPost) => {
-     return blogPost.get({ plain: true });
+      return blogPost.get({ plain: true });
     });
-   
-  
+
     res.render("comment", {
       singleBlogPost,
     });
@@ -138,40 +127,34 @@ router.get("/display", withAuth, async (req, res) => {
     // Get all comments based on logged in user
     const blogData = await BlogPost.findAll({
       where: {
-        id: req.query.id
+        id: req.query.id,
       },
-
-      
     });
     // console.log(blogData)
 
     const commentData = await Comments.findAll({
       where: {
-        blogPost_id: req.query.id
+        blogPost_id: req.query.id,
       },
-
     });
-    console.log(commentData)
-
+    console.log(commentData);
 
     // Serialize blogs data so templates can read it
     const singleBlogPost = blogData.map((blogPost) => {
-     return blogPost.get({ plain: true });
+      return blogPost.get({ plain: true });
     });
-   
+
     const commentBlogPost = commentData.map((commentPost) => {
       return commentPost.get({ plain: true });
-     });
-   
+    });
+
     res.render("display", {
       singleBlogPost,
-      commentBlogPost
+      commentBlogPost,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
