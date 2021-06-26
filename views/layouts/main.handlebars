@@ -21,7 +21,7 @@
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
-      {{!-- <div class="container-fluid"> --}}
+      
         {{#if logged_in}}
           <div class="navbar-brand text-warning">Tech Blog</div>
         {{else}}
@@ -41,7 +41,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-             
+             {{#if logged_in}}
             <li class="nav-item">
               <a
                 class="nav-link anchorHomepage"
@@ -60,6 +60,7 @@
                 autocomplete="off"
               >Dashboard</a>
             </li>
+             {{/if}}
             <li class="nav-item">
               <a
                 class="nav-link anchorLogin"
@@ -79,7 +80,7 @@
             </li>
           </ul>
         </div>
-      {{!-- </div> --}}
+     
     </nav>
 
     <div class="container containerMarginTop">
