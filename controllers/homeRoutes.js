@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-///FIX
+
 router.get("/login", (req, res) => {
   
   res.render("login");
@@ -34,6 +34,7 @@ router.get("/homepage", withAuth, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    
   }
 });
 
