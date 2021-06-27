@@ -4,109 +4,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tech-blog</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/417b375896.js" crossorigin="anonymous"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
-
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
-      
+    
+    </head>
+    
+    <body>
+    
+      <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-dark">
+    
         {{#if logged_in}}
-          <div class="navbar-brand text-warning">Tech Blog</div>
+        <div class="navbar-brand text-warning">Tech Blog Home</div>
         {{else}}
-          <div class="navbar-brand text-warning">Tech Blog Home</div>
+        <div class="navbar-brand text-warning">Tech Blog</div>
         {{/if}}
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-             {{!-- {{#if logged_in}} --}}
+           
             <li class="nav-item">
-              <a
-                class="nav-link anchorHomepage"
-                type="button"
-                aria-current="page"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >Home</a>
+              <a class="nav-link anchorHomepage" type="button" aria-current="page" data-toggle="button" aria-pressed="false"
+                autocomplete="off">Home</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link anchorDashboard"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >Dashboard</a>
+              <a class="nav-link anchorDashboard" data-toggle="button" aria-pressed="false" autocomplete="off">Dashboard</a>
             </li>
-             {{!-- {{/if}} --}}
+           
             <li class="nav-item">
-              <a
-                class="nav-link anchorLogin"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >Login</a>
+              <a class="nav-link anchorLogin" data-toggle="button" aria-pressed="false" autocomplete="off">Login</a>
             </li>
-             {{!-- {{#if logged_in}} --}}
+            
             <li class="nav-item">
-              <a
-                class="nav-link"
-                id="logout"
-                data-toggle="button"
-                aria-pressed="false"
-                autocomplete="off"
-              >Logout</a>
+              <a class="nav-link" id="logout" data-toggle="button" aria-pressed="false" autocomplete="off">Logout</a>
             </li>
-             <script src="./js/logout.js"></script>
-             {{!-- {{/if}} --}}
+            <script src="./js/logout.js"></script>
           </ul>
         </div>
-     
-    </nav>
-
-    <div class="container containerMarginTop">
-      {{{body}}}
-    </div>
-    <script src="./js/index.js"></script>
-   
-
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-
-  </body>
-</html>
+    
+      </nav>
+    
+      <div class="container containerMarginTop">
+        {{{body}}}
+      </div>
+      <script src="./js/index.js"></script>
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+    </body>
+    
+    </html>
