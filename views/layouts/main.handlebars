@@ -34,8 +34,8 @@
         <button
           class="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
+          data-toggle="collapse"
+          data-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
@@ -44,6 +44,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+             {{!-- {{#if logged_in}} --}}
             <li class="nav-item">
               <a
                 class="nav-link anchorHomepage"
@@ -62,6 +63,7 @@
                 autocomplete="off"
               >Dashboard</a>
             </li>
+             {{!-- {{/if}} --}}
             <li class="nav-item">
               <a
                 class="nav-link anchorLogin"
@@ -70,6 +72,7 @@
                 autocomplete="off"
               >Login</a>
             </li>
+             {{!-- {{#if logged_in}} --}}
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -79,9 +82,11 @@
                 autocomplete="off"
               >Logout</a>
             </li>
+             <script src="./js/logout.js"></script>
+             {{!-- {{/if}} --}}
           </ul>
         </div>
-      </div>
+     
     </nav>
 
     <div class="container containerMarginTop">

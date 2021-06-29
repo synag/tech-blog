@@ -9,8 +9,7 @@ router.post("/create", async (req, res) => {
       ...req.body,
       user_id: req.session.user_id,
     });
-    req.session.cookie.maxAge = 2000;
-
+   
     console.log(req.session.cookie.maxAge);
 
     res.status(200).json(newPost);

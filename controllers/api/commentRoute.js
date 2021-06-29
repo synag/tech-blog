@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Comments } = require("../../models");
-const fetch = require("node-fetch");
+
 
 router.post("/create", async (req, res) => {
   try {
