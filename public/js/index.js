@@ -11,6 +11,7 @@ const homepageAnchorHandler = async (event) => {
 const dashboardAnchorHandler = async (event) => {
   event.preventDefault();
   document.location.replace("/blogs");
+
 };
 const createBtnHandler = async (event) => {
   event.preventDefault();
