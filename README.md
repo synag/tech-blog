@@ -38,7 +38,7 @@ Limited usage instructions. You are required to sign up to get access to the sit
 
 The sreenshot for the Tech Blog is below. 
 
-![Tech Blog](.(./public/image/screenshot.png)
+![Tech Blog](./public/image/screenshot.png)
 
 ![Tech Blog](./public/image/screenshot2.png)
 
